@@ -1,0 +1,18 @@
+[package]
+name = "uyamlt"
+repository = "https://github.com/shloon/uyamlt"
+description = "A wrapper for Unity's Smart Merge Tool for systems with multiple unity installations"
+license = "MIT OR Apache-2.0"
+version = "0.1.0"
+edition = "2021"
+keywords = ["unity"]
+categories = ["command-line-utilities","development-tools"]
+readme = "README.md"
+
+[dependencies]
+thiserror = "1"
+anyhow = "1"
+itertools = "0.11.0"
+
+[profile.release]
+lto = true
