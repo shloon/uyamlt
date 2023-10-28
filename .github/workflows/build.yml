@@ -11,15 +11,15 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v3
-    - name: Install Unity
-      uses: hanaytug/unity-installer@v1.1.0
-      with:
-        unity-version: 2022.3.11f1
-        unity-activate-license: false
+    - name: Install Rust toolchain
+      uses: dtolnay/rust-toolchain@stable
     - name: Build
       run: cargo build --verbose
     - name: Run tests
