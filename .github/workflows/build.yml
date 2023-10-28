@@ -18,7 +18,7 @@ jobs:
     - name: Install Unity
       uses: hanaytug/unity-installer@v1.1.0
       with:
-        unityVersion: 2022.3.11f1
+        unity-version: 2022.3.11f1
         unity-activate-license: false
     - name: Build
       run: cargo build --verbose
